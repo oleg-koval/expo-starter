@@ -1,0 +1,46 @@
+{
+  "name": "expo-starter",
+  "version": "1.0.0",
+  "main": "expo-router/entry",
+  "dependencies": {
+    "expo": "~58.0.19",
+    "expo-constants": "~58.0.13",
+    "expo-linking": "~58.0.14",
+    "expo-router": "~58.0.26",
+    "expo-splash-screen": "~58.0.11",
+    "expo-status-bar": "~58.0.4",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-native": "0.88.0",
+    "react-native-safe-area-context": "~5.10.1",
+    "react-native-screens": "~4.30.0",
+    "react-native-web": "~0.21.4"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/react": "~19.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.72.0",
+    "eslint": "^9.39.5",
+    "eslint-config-expo": "~58.0.4",
+    "lefthook": "^2.2.2",
+    "prettier": "^3.9.10",
+    "typescript": "~6.0.3"
+  },
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "file-length": "bash scripts/check-file-length.sh",
+    "build:web": "expo export --platform web",
+    "test": "npm run build:web && node scripts/smoke-web.mjs",
+    "check": "npm run lint && npm run typecheck && npm run format:check && npm run file-length && npm test",
+    "prepare": "node scripts/install-hooks.mjs"
+  },
+  "private": true,
+  "description": "Clean Expo Router and TypeScript starter with Charter checks"
+}

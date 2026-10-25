@@ -1,0 +1,60 @@
+# Repo-specific enforcement for the shared Charter policy.
+[[check]]
+id = "lint"
+rules = ["C1", "C2", "C3", "C4", "C5"]
+run = "npm run lint"
+output = "exit"
+
+[[check]]
+id = "quality"
+rules = ["C7"]
+run = "npm run check"
+output = "exit"
+
+[[check]]
+id = "file-length"
+rules = ["C23"]
+run = "npm run file-length"
+output = "exit"
+
+[[waive]]
+rule = "C10"
+reason = "A separate Gitleaks CI job checks the Git history; Charter does not bundle that tool."
+
+# Sections the PR body must carry, non-empty ("N-A: <reason>" counts).
+[[artifact]]
+heading = "TL;DR (for humans)"
+rules = ["C39"]
+first = true
+
+[[artifact]]
+heading = "Problem"
+rules = ["C11"]
+
+[[artifact]]
+heading = "Data design"
+rules = ["C12"]
+
+[[artifact]]
+heading = "Reuse"
+rules = ["C16"]
+
+[[artifact]]
+heading = "Alternatives"
+rules = ["C17"]
+
+[[artifact]]
+heading = "Rule conflicts"
+rules = ["C18"]
+
+[[artifact]]
+heading = "Performance"
+rules = ["C28", "C29"]
+
+[[artifact]]
+heading = "Scope"
+rules = ["C30", "C32"]
+
+[[artifact]]
+heading = "Proof"
+rules = ["C37"]
